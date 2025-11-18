@@ -19,6 +19,7 @@ def main():
         
     bg_x = 0
     bg_y = 0
+
     
     kt_rct = kt_img.get_rect()
     kt_rct.center = 300, 200
@@ -28,16 +29,19 @@ def main():
         for event in pg.event.get():
             if event.type == pg.QUIT: return
         
-        key_lst = pg.key.get_pressed()
+        dx = -1
+        dy = 0
 
-        kt_rct.move_ip((-1,0))
+        key_lst = pg.key.get_pressed()
         
         if key_lst[pg.K_UP]:
-            kt_rct.move_ip((0,-1))
+            dy -= 1
         if key_lst[pg.K_DOWN]:
-            kt_rct.move_ip((0,1))
+            dy += 1
         if key_lst[pg.K_RIGHT]:
-            kt_rct.move_ip((2,0))
+            dx += 2
+        
+        kt_rct.move_ip((dx, dy))
 
 
         bg_x -= 1
