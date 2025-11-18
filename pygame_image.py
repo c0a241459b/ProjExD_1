@@ -12,6 +12,8 @@ def main():
     bg_img = pg.image.load("fig/pg_bg.jpg")
     tmr = 0
 
+    bg_img2 = pg.transform.flip(bg_img, True, False)
+
     kt_img = pg.image.load("fig/3.png")
     kt_img = pg.transform.flip(kt_img, True, False)
         
@@ -25,11 +27,11 @@ def main():
         if bg_x <= -1600:
             bg_x = 0
         screen.blit(bg_img, (bg_x, 0))
-        screen.blit(bg_img, (bg_x + 1600, 0))
+        screen.blit(bg_img2, (bg_x + 1600, 0))
         screen.blit(kt_img, [300, 200])
         pg.display.update()
         tmr += 1        
-        clock.tick(200)
+        clock.tick(400)
         
         
 
