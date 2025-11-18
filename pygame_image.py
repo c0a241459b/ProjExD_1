@@ -11,14 +11,23 @@ def main():
     clock  = pg.time.Clock()
     bg_img = pg.image.load("fig/pg_bg.jpg")
     tmr = 0
+
+    kt_img = pg.image.load("fig/3.png")
+    kt_img = pg.transform.flip(kt_img, True, False)
+    kt_img = pg.transform.rotozoom(kt_img, 10, 1.0)
+
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
-
+        
         screen.blit(bg_img, [0, 0])
+        screen.blit(kt_img, [300, 200])
         pg.display.update()
         tmr += 1        
         clock.tick(10)
+
+        
+
 
 
 if __name__ == "__main__":
