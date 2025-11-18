@@ -22,9 +22,10 @@ def main():
             if event.type == pg.QUIT: return
         
         bg_x -= 1
-        if bg_x <= -800:
+        if bg_x <= -1600:
             bg_x = 0
         screen.blit(bg_img, (bg_x, 0))
+        screen.blit(bg_img, (bg_x + 1600, 0))
         screen.blit(kt_img, [300, 200])
         pg.display.update()
         tmr += 1        
